@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+double calculate(long long x, long long y, char op) {
+    if (op == '+') {
+        return x + y;
+    }
+    else if (op == '-') {
+        return x - y;
+    }
+    else if (op == '*') {
+        return x * y;
+    }
+    else if (op == '/') {
+        if (y == 0) {
+            cout << "Cannot divide by 0" << endl;
+            return 0;
+        }
+        return (double)x / y;
+    }
+    else {
+        cout << "Invalid " << endl;
+        return 0;
+    }
+}
+
+int main() {
+    long long x, y;   // CHANGED: int → long long
+    char op;
+    char again = 'y';
+
+    while (again == 'y') {
+        cout << "Choose your first number: ";
+        cin >> x;
+
+        cout << "Choose your second number: ";
+        cin >> y;
+
+        cout << "Choose operation (+ - * /): ";
+        cin >> op;
+
+        cout << "Result: " << calculate(x, y, op) << endl;
+
+        cout << "Do you want to calculate again? (y/n): ";
+        cin >> again;
+    }
+ 
+    return 0;
+}
