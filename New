@@ -25,7 +25,7 @@ double calculate(long long x, long long y, char op) {
 }
 
 int main() {
-    long long x, y;   // CHANGED: int → long long
+    long long x, y;   // Changed: int to long long
     char op;
     char again = 'y';
 
